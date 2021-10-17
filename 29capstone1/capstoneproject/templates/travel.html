@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1 class="titleheadline">Travel</h1>
+<hr>
+<h2 class="titleheadline">{{ trtitle }}</h1>
+<br>
+<img class="imgsize" src="{{trimage}}" alt="sciencenews image">
+<hr>
+<p class="titleheadline">{{ trcontent }}. Continue on... <a href="{{trurl}}">{{trurl}}</a> </p>
+
+
+{% endblock %}

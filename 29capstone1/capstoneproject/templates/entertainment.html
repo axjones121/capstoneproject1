@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1 class="titleheadline">Entertainment</h1>
+<hr>
+<h2 class="titleheadline">{{ ettitle }}</h1>
+<br>
+<img class="imgsize" src="{{etimage}}" alt="globalnews image">
+<hr>
+<p class="titleheadline">{{ etcontent }}. Continue on... <a href="{{eturl}}">{{eturl}}</a> </p>
+
+{% endblock %}

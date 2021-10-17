@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1 class="titleheadline">Economic News</h1>
+<hr>
+<h2 class="titleheadline">{{ etitle }}</h1>
+<br>
+<img class="imgsize" src="{{eimage}}" alt="globalnews image">
+<hr>
+<p class="titleheadline">{{ econtent }}. Continue on... <a href="{{eurl}}">{{eurl}}</a> </p>
+
+{% endblock %}

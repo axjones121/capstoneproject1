@@ -1,0 +1,51 @@
+
+
+
+/* body {background-color: rgb(0, 63, 49)} */
+body{background-image: url("f6Wval.jpeg");
+background-size: cover;}
+
+
+.paddingleft{
+    padding-left: 10px;
+}
+
+.titleheadline{
+    color: aliceblue;
+}
+
+.imgsize{
+    width: 100%;
+}
+
+@media (min-width: 990px){
+#loginbutton{
+    position: relative;
+    left: 540px
+}
+}
+
+
+
+.loginposition{ 
+    position: relative;
+    top: 100px;
+    margin: auto;
+    width: 300px;
+}
+
+.signupposition{
+    position: relative;
+    top: 100px;
+    margin: auto;
+    width: 300px;
+    /* padding: auto; */
+}
+
+.text-large{
+    font-size: 450%;
+}
+
+.welcome {
+    font-family: Arial, Helvetica, sans-serif;
+  }
