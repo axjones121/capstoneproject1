@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1 class="titleheadline">Profile</h1>
+
+<hr>
+<br>
+
+<div class="container profileposition">
+    <h2 class="titleheadline underline "> Username </h2>
+    <p class="titleheadline"> {{ user.username }}</p>
+    <br>
+
+
+    <!-- if article read is true AND if article was read by current user -->
+    <h2 class="titleheadline underline">Articles Read</h2>
+    {% for article in articles %}
+    {% if article.read == True %}
+
+    <a href="/comment/{{article.id}}" class="titleheadline"> {{ article.title }}</a>
+    <hr>
+
+    {% endif %}
+    {% endfor %}
+
+    <br>
+    <br>
+
+    <h3 class="titleheadline underline">Comments</h3>
+    {% for comment in comments %}
+    {% if comment.user_id == user.id %}
+    <h5 class="titleheadline">{{comment.articles.title}}:</h5>
+    <p class="titleheadline"> {{ comment.comment }}</p>
+    {% endif %}
+    {% endfor %}
+
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}

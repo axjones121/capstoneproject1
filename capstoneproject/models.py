@@ -20,23 +20,19 @@ class User(db.Model):
 
     __tablename__ = 'users'
 
-    id = db.Column(
-        db.Integer,
-        primary_key=True,
-        autoincrement=True
-    )
+    id = db.Column( db.Integer, primary_key=True,autoincrement=True )
 
-    username = db.Column(
-        db.Text,
-        nullable=False,
-        unique=True
-    )
+    username = db.Column( db.Text, nullable=False, unique=True)
+
+    password = db.Column( db.Text, nullable=False )
+
+    article_id = db.Column( db.Integer, db.ForeignKey('articles.id'))
+
+    comments = db.relationship('Comment', backref='users')
+
+    articles = db.relationship('Article')
 
 
-    password = db.Column(
-        db.Text,
-        nullable=False
-    )
 
     @classmethod
     def register(cls, username, pwd):
@@ -68,16 +64,33 @@ class User(db.Model):
     # end_authenticate    
 
 
+class Article(db.Model):
+    __tablename__ = 'articles'
+
+    id = db.Column( db.Integer, primary_key=True, autoincrement=True)
+
+    title = db.Column( db.Text )
+
+    description = db.Column( db.Text )
+
+    image = db.Column( db.Text)
+
+    url = db.Column( db.Text )
+
+    read = db.Column( db.Boolean )
+
+    comments = db.relationship('Comment', backref='articles')
+
 
 class Comment(db.Model):
 
     __tablename__ = 'comments'
 
-    id = db.Column(
-        db.Integer,
-        primary_key=True,
-    )
+    id = db.Column( db.Integer, primary_key=True, autoincrement=True )
+    user_id = db.Column( db.Integer, db.ForeignKey('users.id'), nullable=False )
+    comment = db.Column( db.Text )
 
-    comment = db.Column(
-        db.Text
+    article_id = db.Column(
+        db.Integer,
+        db.ForeignKey('articles.id')
     )

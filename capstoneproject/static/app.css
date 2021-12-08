@@ -21,7 +21,7 @@ background-size: cover;}
 @media (min-width: 990px){
 #loginbutton{
     position: relative;
-    left: 540px
+    left: 460px
 }
 }
 
@@ -49,3 +49,14 @@ background-size: cover;}
 .welcome {
     font-family: Arial, Helvetica, sans-serif;
   }
+
+.profileposition{ 
+    position: relative;
+    top: 100px;
+    margin: auto;
+    width: 400px;
+}
+
+.underline{
+    text-decoration: underline;
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1 class="titleheadline">{{article.title}}</h1>
+<img src="{{article.image}}" alt="">
+<p class="titleheadline">{{article.description}}</p>
+<p class="titleheadline"><a href="{{article.url}}">{{article.url}}</a></p>
+
+
+<h3 class="titleheadline">Users Comments </h3>
+
+{% for comment in comments %}
+{% if comment.article_id == article.id %}
+
+<li class="titleheadline">
+    <ul>{{comment.users.username}}</ul>
+    <ul>{{comment.comment}}</ul>
+</li>
+
+{% endif %}
+{% endfor %}
+
+{% endblock %}
